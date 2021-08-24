@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    tools:context=".familyHome"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="@color/background_color"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="@drawable/ic_baseline_menu_24" />
+
+            <ImageView
+                android:id="@+id/groceryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginTop="-30dp"
+                app:srcCompat="@drawable/grocery_list" />
+
+            <View
+                android:id="@+id/view15"
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/color" />
+
+            <ImageView
+                android:id="@+id/calendarBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/calendar"
+
+                />
+
+            <View
+                android:id="@+id/view18"
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/color" />
+
+            <ImageView
+                android:id="@+id/bdayBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/bday" />
+
+            <View
+                android:id="@+id/view19"
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/color" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

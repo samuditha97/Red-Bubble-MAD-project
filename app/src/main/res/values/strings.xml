@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Red Bubble project</string>
+    <string name="logintxt">LOGIN</string>
+    <string name="loginTxt">LOGIN</string>
+    <string name="userName">User Name</string>
+    <string name="navigation_drawer_open">Open navigation drawe</string>
+    <string name="navigation_drawer_close">Close navigation drawe</string>
+
+</resources>
