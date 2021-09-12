@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shoppingList">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Grocery List"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="-200dp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="10dp"
+                android:layout_height = "wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/grocery"
+                android:layout_marginLeft="-50dp"
+                android:scaleType="centerCrop"
+
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:backgroundTint="@color/background_color"
+            android:background="@drawable/grocery_round_edge">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/header"
+                android:backgroundTint="@color/color"
+                android:background="@drawable/grocery_round_edge">
+
+                <EditText
+                    android:id="@+id/input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ems="10"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="Enter Item Here"
+                    android:textColorHint="@color/white"
+                    android:textColorLink="@color/background_color" />
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_toRightOf="@+id/input"
+                        android:id="@+id/add"
+                        android:layout_marginLeft="7sp"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/add_item"/>
+
+
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header" />
+        </LinearLayout>
+        </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
