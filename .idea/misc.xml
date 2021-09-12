@@ -17,12 +17,17 @@
         <entry key="..\:/project/app/src/main/res/drawable-v24/notification.xml" value="0.2203125" />
         <entry key="..\:/project/app/src/main/res/drawable-v24/rounded_edge.xml" value="0.2203125" />
         <entry key="..\:/project/app/src/main/res/drawable-v24/text_view_border.xml" value="0.2203125" />
+        <entry key="..\:/project/app/src/main/res/drawable/grocery.xml" value="0.2203125" />
+        <entry key="..\:/project/app/src/main/res/drawable/grocery_round_edge.xml" value="0.2203125" />
+        <entry key="..\:/project/app/src/main/res/drawable/groceryimg.xml" value="0.2203125" />
         <entry key="..\:/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/project/app/src/main/res/font/ubuntu.xml" value="0.234375" />
         <entry key="..\:/project/app/src/main/res/font/ubuntu_bold.xml" value="0.234375" />
         <entry key="..\:/project/app/src/main/res/layout/activity_family_home.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/project/app/src/main/res/layout/activity_shopping_list.xml" value="0.1" />
         <entry key="..\:/project/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/project/app/src/main/res/layout/grocery.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/layout/header.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
       </map>
