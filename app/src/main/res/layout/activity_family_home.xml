@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:backgroundTint="@color/background_color"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
-                app:navigationIcon="@drawable/ic_baseline_menu_24" />
+                app:navigationIcon="@drawable/menu" />
 
             <ImageView
                 android:id="@+id/groceryBtn"
