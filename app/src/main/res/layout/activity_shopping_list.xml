@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".shoppingList">
+    tools:context=".shoppingList"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/menu" />
+
+
 
 
     <LinearLayout
@@ -57,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/header"
-                android:backgroundTint="@color/color"
+                android:backgroundTint="@color/background_color"
                 android:background="@drawable/grocery_round_edge">
 
                 <EditText
@@ -71,14 +94,14 @@
                     android:textColorHint="@color/white"
                     android:textColorLink="@color/background_color" />
 
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:layout_toRightOf="@+id/input"
-                        android:id="@+id/add"
-                        android:layout_marginLeft="7sp"
-                        android:layout_centerVertical="true"
-                        app:srcCompat="@drawable/add_item"/>
+                <ImageView
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:layout_toRightOf="@+id/input"
+                    android:id="@+id/add"
+                    android:layout_marginLeft="7sp"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/list_add" />
 
 
 
@@ -90,7 +113,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/header" />
         </LinearLayout>
-        </LinearLayout>
+
+    </LinearLayout>
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.drawerlayout.widget.DrawerLayout>
