@@ -14,9 +14,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class shoppingList extends AppCompatActivity {
-    ListView listView;
-    ArrayList<String> items;
-    ArrayAdapter<String> adapter;
+    static ListView listView;
+    static ArrayList<String> items;
+    static ListViewAdapter adapter;
 
     EditText input;
     ImageView enter;
@@ -48,12 +48,13 @@ public class shoppingList extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                makeToast("Long Press " + items.get(i));
+                makeToast("Removed: " + items.get(i));
+                removeItem(i);
                 return false;
             }
         });
 
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,items);
+        adapter = new ListViewAdapter(getApplicationContext(),items);
         listView.setAdapter(adapter);
 
         enter.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +71,15 @@ public class shoppingList extends AppCompatActivity {
             }
         });
     }
-    public void addItem(String item){
+
+    public static void removeItem(int remove){
+        items.remove(remove);
+        listView.setAdapter(adapter);
+
+    }
+
+
+    public static void addItem(String item){
         items.add(item);
         listView.setAdapter(adapter);
 

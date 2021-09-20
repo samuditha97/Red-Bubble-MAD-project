@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#013849"
+    android:background="#05436b"
     android:fitsSystemWindows="true"
     tools:context=".familyHome"
     tools:openDrawer="start">
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
-                android:backgroundTint="@color/background_color"
+                android:backgroundTint="#05436b"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@drawable/menu" />
