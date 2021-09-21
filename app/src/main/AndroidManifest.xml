@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".BMICalculator"
+            android:exported="true" />
+        <activity
             android:name=".shoppingList"
             android:exported="true" />
         <activity
