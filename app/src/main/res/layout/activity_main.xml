@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:backgroundTint="@color/color"
+            android:backgroundTint="@color/themeColor"
             android:background="@drawable/rounded_edge"
             android:orientation="vertical">
 
@@ -52,7 +52,7 @@
             android:background="@drawable/text_view_border"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textColorHint="@color/color"
+            android:textColorHint="@color/themeColor"
             />
 
         <View
@@ -70,7 +70,7 @@
             android:background="@drawable/text_view_border"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textColorHint="@color/color"
+            android:textColorHint="@color/themeColor"
             android:hint="Password"/>
 
         <TextView
@@ -86,7 +86,7 @@
             android:id="@+id/view5"
             android:layout_width="250dp"
             android:layout_height="1dp"
-            android:background="@color/color"
+            android:background="@color/themeColor"
             android:layout_gravity="center"/>
 
         <View
@@ -99,8 +99,9 @@
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:text="Login"
+            android:textColor="@color/white"
             android:layout_gravity="center"
-            android:backgroundTint="@color/color"
+            android:backgroundTint="@color/themeColor"
             android:fontFamily="@font/ubuntu"
             />
 
@@ -113,7 +114,7 @@
             android:id="@+id/view8"
             android:layout_width="250dp"
             android:layout_height="1dp"
-            android:background="@color/color"
+            android:background="@color/themeColor"
             android:layout_gravity="center"/>
 
         <TextView
@@ -130,8 +131,9 @@
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:text="Sign Up"
+            android:textColor="@color/white"
             android:layout_gravity="center"
-            android:backgroundTint="@color/color"
+            android:backgroundTint="@color/themeColor"
             android:fontFamily="@font/ubuntu"
             />
 
