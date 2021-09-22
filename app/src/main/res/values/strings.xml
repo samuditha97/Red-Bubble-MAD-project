@@ -16,5 +16,6 @@
     <string name="obese_class_i">obese_class_i</string>
     <string name="obese_class_ii">obese_class_ii</string>
     <string name="obese_class_iii">obese_class_iii</string>
+    <string name="testId1">Emergency Places</string>
 
 </resources>
