@@ -8,19 +8,57 @@
     <string name="weight">weight</string>
     <string name="height">height</string>
     <string name="calculateBMI">calculateBMI</string>
-    <string name="very_severely_underweight">very_severely_underweight</string>
-    <string name="severely_underweight">severely_underweight</string>
-    <string name="underweight">underweight</string>
-    <string name="normal">normal</string>
-    <string name="overweight">overweight</string>
-    <string name="obese_class_i">obese_class_i</string>
-    <string name="obese_class_ii">obese_class_ii</string>
-    <string name="obese_class_iii">obese_class_iii</string>
+    <string name="very_severely_underweight">Very severely underweight</string>
+    <string name="severely_underweight">Severely underweight</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class_i">Obese class i</string>
+    <string name="obese_class_ii">Obese class ii</string>
+    <string name="obese_class_iii">Obese class iii</string>
     <string name="testId1">Emergency Places</string>
+
+  
+  
+  
+  
+  
+ 
+  
+ 
+    <string name="calc">Calculate BMI</string>
+    <string name="weightKg">Weight (kg)</string>
+    <string name="Height">Height (cm)</string>
+    <string name="bmicalc">BMI CALCULATOR</string>
+
+    <string name="textView_gpaview">Here is your GPA</string>
+  <string name="gpa">GPA Calculation</string>
+
+
+    <!--Strings for on boarding screen-->
+
+    <!--Titles-->
+    <string name="first_slide_title">Health</string>
+    <string name="second_slide_title">Official</string>
+    <string name="third_slide_title">Family</string>
+    <string name="fourth_slide_title">Budget</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">There are several features under this facility that will make it easier for you to move forward with your healthy life. features include BMI calculator, health guidance.</string>
+    <string name="second_slide_desc">Here are some essentials for your office life and university life. features GPA calculation, office notes, education notes, etc. it also contains the telephone numbers of the government agencies you need</string>
+    <string name="third_slide_desc">This facility contains some features for the happiness of your beloved family. features include grocery list, family calendar, and birthday reminder</string>
+    <string name="fourth_slide_desc">This facility contains features that make your economic life easier features include budget manager</string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+    
     <string name="family">Family</string>
     <string name="home">Home</string>
     <string name="health">Health</string>
     <string name="official">Official</string>
     <string name="budget">Budget</string>
+
 
 </resources>

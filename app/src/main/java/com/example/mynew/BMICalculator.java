@@ -18,7 +18,7 @@ public class BMICalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmicalculator);
         height = (EditText) findViewById(R.id.height);
-        weight = (EditText) findViewById(R.id.weight);
+        weight = (EditText) findViewById(R.id.weightKg);
         result = (TextView) findViewById(R.id.result);
     }
     public void calculateBMI(View v) {
