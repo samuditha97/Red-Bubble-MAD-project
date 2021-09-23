@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".NotepadActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainHome"
             android:exported="true" />
         <activity
