@@ -14,16 +14,27 @@
     tools:context=".BMICalculator">
 
     <TextView
-        android:text="@string/weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"/>
+        android:text="@string/bmicalc"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="@string/weightKg"
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/weight"
+        android:id="@+id/weightKg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -34,13 +45,13 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:text="@string/height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"/>
+        android:text="@string/Height"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/height"
@@ -58,9 +69,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:onClick="calculateBMI"
-        android:text="@string/calculateBMI"
+        android:text="@string/calc"
         android:textColor="@color/white"
         app:backgroundTint="@color/purple_700" />
 
