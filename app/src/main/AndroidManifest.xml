@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            android:name=".GPACalculator"
-            android:exported="true" />
-        <activity
-            android:name=".EmergencyPlacesActivity"
+            android:name=".OnBoarding"
             android:exported="true" />
         <activity
             android:name=".welcomeUI"
@@ -37,6 +34,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+          <activity
+            android:name=".EmergencyPlacesActivity"
+            android:exported="true" />
+          <activity
+           android:name=".GPACalculator"
+            android:exported="true" />
+          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

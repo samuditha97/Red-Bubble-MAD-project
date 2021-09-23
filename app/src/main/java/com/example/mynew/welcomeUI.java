@@ -42,7 +42,7 @@ public class welcomeUI extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(welcomeUI.this,MainActivity.class);
+                Intent intent = new Intent(welcomeUI.this,OnBoarding.class);
                 startActivity(intent);
                 finish();
             }

@@ -49,4 +49,25 @@
     <string name="textView_gpaview">Here is your GPA</string>
   <string name="gpa">GPA Calculation</string>
 
+
+    <!--Strings for on boarding screen-->
+
+    <!--Titles-->
+    <string name="first_slide_title">Health</string>
+    <string name="second_slide_title">Official</string>
+    <string name="third_slide_title">Family</string>
+    <string name="fourth_slide_title">Budget</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">There are several features under this facility that will make it easier for you to move forward with your healthy life. features include BMI calculator, health guidance.</string>
+    <string name="second_slide_desc">Here are some essentials for your office life and university life. features GPA calculation, office notes, education notes, etc. it also contains the telephone numbers of the government agencies you need</string>
+    <string name="third_slide_desc">This facility contains some features for the happiness of your beloved family. features include grocery list, family calendar, and birthday reminder</string>
+    <string name="fourth_slide_desc">This facility contains features that make your economic life easier features include budget manager</string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+
+
 </resources>
