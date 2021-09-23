@@ -15,6 +15,7 @@ public class EmergencyPlacesActivity extends AppCompatActivity {
     //vars
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<String> mPhone = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,26 +27,22 @@ public class EmergencyPlacesActivity extends AppCompatActivity {
 
     private void initImageBitmaps() {
         Log.d(TAG, "initImageBitmaps: started");
-        mImageUrls.add("https://lp-cms-production.imgix.net/2019- 06/b4fbc706dab2a70a96588309ed268a1a-sri-lanka.jpeg");
-        mNames.add("Seegiriya");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Demodara-Nine-Arch-Bridge.jpg");
-        mNames.add("Ella");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Train-ride-from-Kandy-to-Nuwara-Eliya.jpg");
-        mNames.add("Nuwara Eliya");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Pinnawala-Elephant-Orphanage.jpg");
-        mNames.add("Pinnawala Elephant Orphanage");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Ruins-of-Polonnaruwa.jpg");
-        mNames.add("Polonnaruwa");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Adams-Peak.jpg");
-        mNames.add("Adams Peak");
+        mImageUrls.add("https://upload.wikimedia.org/wikipedia/en/d/d1/Lanka_Hospitals_logo.png");
+        mNames.add("Lanka Hospitals  No:940");
+        mImageUrls.add("https://www.logolynx.com/images/logolynx/5a/5ab647016211a7647ade0b764e68881f.jpeg");
+        mNames.add("Sri Lanka Police  No:911");
         mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Mirissa-Fisheries-Harbor.jpg");
-        mNames.add("Mirissa");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Leopards.jpg");
-        mNames.add("Yala National Park");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Colombo.jpg");
-        mNames.add("Colombo");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Jaffna.jpg");
-        mNames.add("Jaffna");
+        mNames.add("Srilanka.travel  No: 900");
+        mImageUrls.add("https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Sri_Lanka_Police_logo.svg/800px-Sri_Lanka_Police_logo.svg.png");
+        mNames.add("Sri Lanka Police  No:119");
+        mImageUrls.add("https://upload.wikimedia.org/wikipedia/en/d/d1/Lanka_Hospitals_logo.png");
+        mNames.add("Lanka Hospitals  No:940");
+        mImageUrls.add("https://www.logolynx.com/images/logolynx/5a/5ab647016211a7647ade0b764e68881f.jpeg");
+        mNames.add("Sri Lanka Police  No:911");
+        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h- 400/uploads/2015/06/Mirissa-Fisheries-Harbor.jpg");
+        mNames.add("Srilanka.travel  No: 900");
+        mImageUrls.add("https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Sri_Lanka_Police_logo.svg/800px-Sri_Lanka_Police_logo.svg.png");
+        mNames.add("Sri Lanka Police  No:119");
         initRecyclerView();
     }
 
