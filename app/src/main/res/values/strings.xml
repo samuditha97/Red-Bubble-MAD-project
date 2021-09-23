@@ -17,28 +17,13 @@
     <string name="obese_class_ii">Obese class ii</string>
     <string name="obese_class_iii">Obese class iii</string>
     <string name="testId1">Emergency Places</string>
+
   
   
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   
  
     <string name="calc">Calculate BMI</string>
@@ -68,6 +53,12 @@
     <string name="skip_btn">Skip</string>
     <string name="next_btn">Next</string>
     <string name="let_get_started">Lets Get Started</string>
+    
+    <string name="family">Family</string>
+    <string name="home">Home</string>
+    <string name="health">Health</string>
+    <string name="official">Official</string>
+    <string name="budget">Budget</string>
 
 
 </resources>
