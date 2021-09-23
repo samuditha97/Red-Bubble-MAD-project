@@ -8,16 +8,45 @@
     <string name="weight">weight</string>
     <string name="height">height</string>
     <string name="calculateBMI">calculateBMI</string>
-    <string name="very_severely_underweight">very_severely_underweight</string>
-    <string name="severely_underweight">severely_underweight</string>
-    <string name="underweight">underweight</string>
-    <string name="normal">normal</string>
-    <string name="overweight">overweight</string>
-    <string name="obese_class_i">obese_class_i</string>
-    <string name="obese_class_ii">obese_class_ii</string>
-    <string name="obese_class_iii">obese_class_iii</string>
+    <string name="very_severely_underweight">Very severely underweight</string>
+    <string name="severely_underweight">Severely underweight</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class_i">Obese class i</string>
+    <string name="obese_class_ii">Obese class ii</string>
+    <string name="obese_class_iii">Obese class iii</string>
     <string name="testId1">Emergency Places</string>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+    <string name="calc">Calculate BMI</string>
+    <string name="weightKg">Weight (kg)</string>
+    <string name="Height">Height (cm)</string>
+    <string name="bmicalc">BMI CALCULATOR</string>
+
     <string name="textView_gpaview">Here is your GPA</string>
-    <string name="gpa">GPA Calculation</string>
+  <string name="gpa">GPA Calculation</string>
 
 </resources>
