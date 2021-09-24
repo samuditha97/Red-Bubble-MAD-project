@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".MyBudget"
+            android:exported="true" />
+        <activity
+            android:name=".BudgetHome"
+            android:exported="true" />
+        <activity
             android:name=".MainHome"
             android:exported="true" />
         <activity
@@ -41,8 +47,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
