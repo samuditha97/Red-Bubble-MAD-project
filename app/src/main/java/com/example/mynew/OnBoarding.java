@@ -2,7 +2,6 @@ package com.example.mynew;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +46,7 @@ public class OnBoarding extends AppCompatActivity {
     }
 
     public void skip(View view){
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this, login_signup.class));
         finish();
 
     }

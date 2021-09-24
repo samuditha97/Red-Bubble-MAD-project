@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -12,7 +11,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.window.SplashScreen;
 
 public class welcomeUI extends AppCompatActivity {
 
@@ -61,7 +59,7 @@ public class welcomeUI extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), login_signup.class);
                     startActivity(intent);
                     finish();
 
