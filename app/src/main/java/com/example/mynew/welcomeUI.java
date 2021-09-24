@@ -3,6 +3,7 @@ package com.example.mynew;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,15 +12,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.window.SplashScreen;
 
 public class welcomeUI extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 5000;
+
+    private static int SPLASH_TIMER = 5000;
 
     //variables
     Animation topAnim, bottomAnim;
     ImageView image;
     TextView slogan;
+
+    SharedPreferences OnBoarding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +47,30 @@ public class welcomeUI extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(welcomeUI.this,OnBoarding.class);
-                startActivity(intent);
-                finish();
+
+                OnBoarding = getSharedPreferences("OnBoarding",MODE_PRIVATE);
+                boolean isFirstTime = OnBoarding.getBoolean("firstTime",true);
+
+                if (isFirstTime){
+                    SharedPreferences.Editor editor = OnBoarding.edit();
+                    editor.putBoolean("firstTime",false);
+                    editor.commit();
+
+                    Intent intent = new Intent(getApplicationContext(),OnBoarding.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
+
+
             }
-        },SPLASH_SCREEN);
-
-
+        },SPLASH_TIMER);
 
     }
 }
