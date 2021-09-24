@@ -32,6 +32,7 @@
                 android:fontFamily="@font/ubuntu"
                 android:gravity="center"
                 android:hint="Your Course Credit"
+                android:minHeight="48dp"
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
@@ -43,6 +44,7 @@
                 android:fontFamily="@font/ubuntu"
                 android:gravity="center"
                 android:hint="Your Course Grade"
+                android:minHeight="48dp"
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
@@ -53,7 +55,7 @@
                 android:layout_gravity="center"
                 android:background="@color/textedit"
                 android:text="Add Course"
-                android:textColor="@color/white"
+                android:textColor="#616161"
                 app:iconTint="@color/teal_200" />
 
             <Button
