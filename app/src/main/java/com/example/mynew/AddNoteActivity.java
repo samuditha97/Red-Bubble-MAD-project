@@ -18,7 +18,7 @@ public class AddNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-
+        CategoryName = getIntent().getExtras().get("category").toString();
 
         AddNoteButton = (Button) findViewById(R.id.add_new_note);
         InputnoteImage = (ImageView) findViewById(R.id.note_image);
