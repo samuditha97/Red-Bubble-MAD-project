@@ -10,19 +10,31 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:padding="20dp"
 
     tools:context=".BMICalculator">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/bmicalc"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:padding="20dp"
+        android:background="@color/themeColor">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="@string/bmicalc"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,6 +42,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/ubuntu_bold"
         android:text="@string/weightKg"
         android:textSize="20sp" />
 
@@ -50,6 +63,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/ubuntu_bold"
         android:text="@string/Height"
         android:textSize="20sp" />
 
@@ -66,14 +80,14 @@
 
     <Button
         android:id="@+id/calc"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:onClick="calculateBMI"
         android:text="@string/calc"
         android:textColor="@color/white"
-        app:backgroundTint="@color/purple_700" />
+        android:backgroundTint="@color/themeColor" />
 
     <TextView
         android:id="@+id/result"
@@ -81,6 +95,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/ubuntu_bold"
         android:layout_marginTop="25dp"
         android:textSize="20sp"/>
+    </LinearLayout>
 </LinearLayout>
