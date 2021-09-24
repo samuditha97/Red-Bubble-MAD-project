@@ -1,14 +1,15 @@
 package com.example.mynew;
 public class UserHelperClass {
-    String Name, Age, Gender, Height, Weight;
+    String Name, Age, Gender, Height, Weight, BloodGroup;
     public UserHelperClass() {
     }
-    public UserHelperClass(String Name, String Age, String Gender, String Height, String Weight) {
+    public UserHelperClass(String Name, String Age, String Gender, String Height, String Weight, String BloodGroup) {
         this.Name = Name;
         this.Age = Age;
         this.Gender = Gender;
         this.Height = Height;
         this.Weight = Weight;
+        this.BloodGroup =BloodGroup;
     }
     public String getName() {
         return Name;
@@ -39,5 +40,11 @@ public class UserHelperClass {
     }
     public void setWeight(String Weight) {
         this.Weight = Weight;
+    }
+    public String getBloodGroup() {
+        return BloodGroup;
+    }
+    public void setBloodGroup(String BloodGroup) {
+        this.BloodGroup = BloodGroup;
     }
 }

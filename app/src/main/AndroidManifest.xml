@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".HealthProfile"
+            android:exported="true" />
+        <activity
             android:name=".MyBudget"
             android:exported="true" />
         <activity
