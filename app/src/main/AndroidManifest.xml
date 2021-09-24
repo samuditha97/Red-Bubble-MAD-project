@@ -14,6 +14,9 @@
             android:exported="true" />
         <activity
             android:name=".BudgetHome"
+             android:exported="true" />
+        <activity
+            android:name=".NotepadActivity"
             android:exported="true" />
         <activity
             android:name=".MainHome"
