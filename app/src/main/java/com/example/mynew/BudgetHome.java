@@ -7,24 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.mynew.R;
+public class BudgetHome extends AppCompatActivity {
 
-public class MainHome extends AppCompatActivity {
-
-    private CardView FamilyCardView;
-    private CardView HealthCardView;
-    private CardView OfficialCardView;
-    private CardView BudgetCardView;
+    private CardView budgetCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_home);
+        setContentView(R.layout.activity_budget_home);
 
-        BudgetCardView.setOnClickListener(new View.OnClickListener() {
+        budgetCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainHome.this, BudgetHome.class);
+                Intent intent = new Intent(BudgetHome.this, MyBudget.class);
                 startActivity(intent);
             }
         });

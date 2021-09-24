@@ -41,6 +41,7 @@
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/FamilyCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#00000000"
@@ -72,6 +73,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/HealthCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#00000000"
@@ -104,6 +106,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/OfficialCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#00000000"
@@ -135,6 +138,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/BudgetCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#00000000"
