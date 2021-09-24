@@ -46,6 +46,4 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     //circle imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    //coordinator layout
-    implementation 'com.google.android.material:material:1.2.1'
 }
