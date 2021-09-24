@@ -10,7 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 public class HealthProfile extends AppCompatActivity {
     //Variables
-    TextInputLayout regName, age, gender, height, weight;
+    TextInputLayout regName, age, gender, height, weight, bloodgroup;
     Button regBtn;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -24,21 +24,23 @@ public class HealthProfile extends AppCompatActivity {
         gender = findViewById(R.id.gender);
         height = findViewById(R.id.height);
         weight = findViewById(R.id.weight);
+        bloodgroup = findViewById(R.id.bloodgroup);
         regBtn = findViewById(R.id.reg_btn);
 //Save data in FireBase on button click
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("users");
+                reference = rootNode.getReference("HealthProfile");
 //Get all the values
                 String Name = regName.getEditText().getText().toString();
                 String Age = age.getEditText().getText().toString();
                 String Gender = gender.getEditText().getText().toString();
                 String Height = height.getEditText().getText().toString();
                 String Weight = weight.getEditText().getText().toString();
-                UserHelperClass helperClass = new UserHelperClass(Name, Age, Gender, Height, Weight);
-                reference.child(Weight).setValue(helperClass);
+                String BloodGroup = bloodgroup.getEditText().getText().toString();
+                UserHelperClass helperClass = new UserHelperClass(Name, Age, Gender, Height, Weight, BloodGroup);
+                reference.child(Name).setValue(helperClass);
             }
         });//Register Button method end
     }//onCreate Method End
