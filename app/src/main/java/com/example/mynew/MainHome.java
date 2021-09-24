@@ -21,6 +21,8 @@ public class MainHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
 
+        BudgetCardView = findViewById(R.id.BudgetCardView);
+
         BudgetCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
