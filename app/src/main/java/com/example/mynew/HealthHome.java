@@ -12,6 +12,7 @@ public class HealthHome extends AppCompatActivity {
     private CardView health_profile;
     private CardView bmi;
     private CardView timer;
+    private CardView profilesearcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class HealthHome extends AppCompatActivity {
         health_profile = findViewById(R.id.health_profile);
         bmi = findViewById(R.id.bmi);
         timer = findViewById(R.id.timer);
+        profilesearcher = findViewById(R.id.profilesearcher);
 
         health_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +44,14 @@ public class HealthHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HealthHome.this, HealthTimer.class);
+                startActivity(intent);
+            }
+        });
+
+        profilesearcher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthHome.this, HealthProfileFinder.class);
                 startActivity(intent);
             }
         });

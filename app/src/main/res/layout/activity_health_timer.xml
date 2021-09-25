@@ -36,7 +36,7 @@
             android:layout_centerVertical="true"
             android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
-            android:text="WORKOUT TIMER"
+            android:text="Workout Timer"
             android:textColor="@color/white"
             android:textSize="30sp" />
     </RelativeLayout>
