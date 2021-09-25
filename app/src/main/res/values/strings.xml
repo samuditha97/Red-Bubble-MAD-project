@@ -52,7 +52,24 @@
     <string name="budget">Budget</string>
     <string name="confirm">Confirm</string>
 
-    <string-array name="items">
+    <!--SignUp strings-->
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="retailer_heading">Smart Your Life</string>
+    <string name="create_account">Create Account</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="full_name">Enter Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+  
+  
+  
+  
+  
+  <string-array name="items">
         <item>Select item</item>
         <item>Transport</item>
         <item>Food</item>
@@ -65,4 +82,6 @@
         <item>Personal</item>
         <item>Other</item>
     </string-array>
+
+
 </resources>

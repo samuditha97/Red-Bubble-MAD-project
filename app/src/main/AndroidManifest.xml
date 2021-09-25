@@ -10,13 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            android:name=".MyBudget"
+            android:name=".NoteCategoryActivity"
             android:exported="true" />
         <activity
-            android:name=".BudgetHome"
-             android:exported="true" />
-        <activity
-            android:name=".NotepadActivity"
+            android:name=".AddNoteActivity"
             android:exported="true" />
         <activity
             android:name=".MainHome"
