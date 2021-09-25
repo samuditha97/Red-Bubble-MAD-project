@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class GPACalculator<_> extends AppCompatActivity {
+public class GPACalculator extends AppCompatActivity {
 
     private EditText Credit,Grade;
     private Button addCourse,seeGpa,erase;

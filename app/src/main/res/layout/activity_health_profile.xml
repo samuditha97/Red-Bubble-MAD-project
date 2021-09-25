@@ -122,7 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/themeColor"
-        android:text="@string/save"
+        android:text="save"
         android:textColor="@color/white" />
     </LinearLayout>
 </ScrollView>

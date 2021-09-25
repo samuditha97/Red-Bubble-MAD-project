@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".NoteAddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NotepadActivity"
+            android:exported="true" />
+        <activity
             android:name=".NoteCategoryActivity"
             android:exported="true" />
         <activity
@@ -37,6 +43,9 @@
             android:name=".shoppingList"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".HealthProfile"
+            android:exported="true" />
         <activity
             android:name=".familyHome"
             android:exported="true"
