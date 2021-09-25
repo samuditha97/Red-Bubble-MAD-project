@@ -54,9 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="30dp"
             android:columnCount="2"
             android:rowCount="3">
 
@@ -297,7 +297,7 @@
             android:layout_gravity="bottom|right"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="22dp"
             android:backgroundTint="@color/themeColor"
             app:fabSize="normal"
             app:srcCompat="@drawable/budget_float_add_button"
