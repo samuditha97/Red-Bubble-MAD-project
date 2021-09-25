@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
     ImageView backBtn;
     Button login;
     TextView titleText;
-    TextInputLayout username,password;
+    TextInputLayout username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,103 +40,103 @@ public class Login extends AppCompatActivity {
         backBtn = findViewById(R.id.login_back_btn);
         login = findViewById(R.id.login_enter_btn);
         titleText = findViewById(R.id.login_title_txt);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
     }
 
 
-        private Boolean validateUsername () {
-            String val = username.getEditText().getText().toString();
+    private Boolean validateUsername() {
+        String val = username.getEditText().getText().toString();
 
-            if (val.isEmpty()) {
-                username.setError("Field cannot be empty");
-                return false;
-            } else {
-                username.setError(null);
-                username.setErrorEnabled(false);
-                return true;
-            }
+        if (val.isEmpty()) {
+            username.setError("Field cannot be empty");
+            return false;
+        } else {
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
         }
+    }
 
-        private Boolean validatePassword () {
-            String val = password.getEditText().getText().toString();
+    private Boolean validatePassword() {
+        String val = password.getEditText().getText().toString();
 
 
-            if (val.isEmpty()) {
-                password.setError("Field cannot be empty");
-                return false;
-            } else {
-                password.setError(null);
-                password.setErrorEnabled(false);
-                return true;
-            }
+        if (val.isEmpty()) {
+            password.setError("Field cannot be empty");
+            return false;
+        } else {
+            password.setError(null);
+            password.setErrorEnabled(false);
+            return true;
         }
+    }
 
-
-
-        public void loggedin(View view){
-            //validate login info
-            if (!validateUsername() | !validatePassword()) {
-                return;
-            } else {
-                isUser();
-            }
+    public void loggedin(View view) {
+        //validate login info
+        if (!validateUsername() | !validatePassword()) {
+            return;
+        } else {
+            isUser();
         }
+    }
 
-        private void isUser() {
-            String userEnteredUsername = username.getEditText().getText().toString().trim();
-            String userEnteredPassword = password.getEditText().getText().toString().trim();
+    private void isUser() {
+        String userEnteredUsername = username.getEditText().getText().toString().trim();
+        String userEnteredPassword = password.getEditText().getText().toString().trim();
 
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
-            Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
-            checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
+        Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
-                    if (snapshot.exists()) {
+                if (datasnapshot.exists()) {
+
+                    username.setError(null);
+                    username.setErrorEnabled(false);
+
+                    String passwordFromDB = datasnapshot.child(userEnteredUsername).child("password").getValue(String.class);
+
+                    if (passwordFromDB.equals(userEnteredPassword)) {
 
                         username.setError(null);
                         username.setErrorEnabled(false);
 
-                        String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
+                        String nameFromDB = datasnapshot.child(userEnteredUsername).child("name").getValue(String.class);
+                        String usernameFromDB = datasnapshot.child(userEnteredUsername).child("username").getValue(String.class);
+                        String phoneFromDB = datasnapshot.child(userEnteredUsername).child("phone").getValue(String.class);
+                        String emailFromDB = datasnapshot.child(userEnteredUsername).child("email").getValue(String.class);
 
-                        if (passwordFromDB.equals(userEnteredPassword)) {
+                        Intent intent = new Intent(getApplicationContext(),UserProfile.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("phone", phoneFromDB);
+                        intent.putExtra("password", passwordFromDB);
 
-                            username.setError(null);
-                            username.setErrorEnabled(false);
-
-                            String nameFromDB = snapshot.child(userEnteredUsername).child("name").getValue(String.class);
-                            String usernameFromDB = snapshot.child(userEnteredUsername).child("username").getValue(String.class);
-                            String phoneFromDB = snapshot.child(userEnteredUsername).child("phone").getValue(String.class);
-                            String emailFromDB = snapshot.child(userEnteredUsername).child("email").getValue(String.class);
-
-                            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
-                            intent.putExtra("name", nameFromDB);
-                            intent.putExtra("username", usernameFromDB);
-                            intent.putExtra("email", emailFromDB);
-                            intent.putExtra("phone", phoneFromDB);
-                            intent.putExtra("password", passwordFromDB);
-
-                            startActivity(intent);
-                        } else {
-                            password.setError("Wrong Password");
-                            password.requestFocus();
-                        }
+                        startActivity(intent);
                     } else {
-                        username.setError("No such User exist");
-                        username.requestFocus();
+                        password.setError("Wrong Password");
+                        password.requestFocus();
                     }
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
+                else {
+                    username.setError("No such User exist");
+                    username.requestFocus();
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 
-
-        public void call_signup_login_Screen (View view){
+    public void call_signup_login_Screen(View view) {
         Intent intent = new Intent(getApplicationContext(), login_signup.class);
 
         Pair[] pairs = new Pair[1];
@@ -150,6 +150,6 @@ public class Login extends AppCompatActivity {
         }
 
     }
+}
 
 
-    }

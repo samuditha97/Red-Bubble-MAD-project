@@ -300,7 +300,8 @@
             android:layout_marginBottom="48dp"
             android:backgroundTint="@color/themeColor"
             app:fabSize="normal"
-            app:srcCompat="@drawable/budget_float_add_button" />
+            app:srcCompat="@drawable/budget_float_add_button"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

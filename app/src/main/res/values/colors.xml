@@ -11,4 +11,6 @@
     <color name="background_color">#013849</color>
     <color name="themeColor">#05436B</color>
     <color name="textedit">#E6E1E1</color>
+    <color name="cal1">#757679</color>
+    <color name="cal2">#414141</color>
 </resources>

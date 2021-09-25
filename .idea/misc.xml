@@ -24,12 +24,16 @@
         <entry key="..\:/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/project/app/src/main/res/font/ubuntu.xml" value="0.234375" />
         <entry key="..\:/project/app/src/main/res/font/ubuntu_bold.xml" value="0.234375" />
+        <entry key="..\:/project/app/src/main/res/layout/activity_budget_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/project/app/src/main/res/layout/activity_family_calander.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/layout/activity_family_home.xml" value="0.2" />
         <entry key="..\:/project/app/src/main/res/layout/activity_gpacalculator.xml" value="0.25416666666666665" />
         <entry key="..\:/project/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/project/app/src/main/res/layout/activity_login_signup.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/project/app/src/main/res/layout/activity_main_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/project/app/src/main/res/layout/activity_my_budget.xml" value="0.20416666666666666" />
+        <entry key="..\:/project/app/src/main/res/layout/activity_notepad.xml" value="0.20416666666666666" />
         <entry key="..\:/project/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/project/app/src/main/res/layout/activity_on_boarding2.xml" value="0.2" />
         <entry key="..\:/project/app/src/main/res/layout/activity_shopping_list.xml" value="0.2" />

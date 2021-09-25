@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mynew">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,16 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            android:name=".MainHome"
-            android:exported="true" />
-        <activity
-            android:name=".EmergencyPlacesActivity"
-            android:exported="true" />
-        <activity
-            android:name=".GPACalculator"
-            android:exported="true" />
-        <activity
-            android:name=".OnBoarding"
+            android:name=".familyCalander"
             android:exported="true" />
         <activity
             android:name=".welcomeUI"
@@ -28,21 +22,48 @@
             android:name=".BMICalculator"
             android:exported="true" />
         <activity
-            android:name=".shoppingList"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:name=".BudgetHome"
+            android:exported="true" />
+        <activity
+            android:name=".EmergencyPlacesActivity"
+            android:exported="true" />
         <activity
             android:name=".familyHome"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SignUp"
+            android:name=".GPACalculator"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HealthProfile"
+            android:exported="true" />
+        <activity
+            android:name=".login_signup"
+            android:exported="true" />
+        <activity
+            android:name=".MainHome"
+            android:exported="true" />
+        <activity
+            android:name=".MyBudget"
+            android:exported="true" />
+        <activity
+            android:name=".NotepadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OnBoarding"
+            android:exported="true" />
+        <activity
+            android:name=".shoppingList"
+            android:exported="true" />
+        <activity
+            android:name=".Login"
+            android:exported="true" />
+        <activity
+            android:name=".Signup"
+            android:exported="true" />
+        <activity
+            android:name=".UserProfile"
             android:exported="true">
-
-          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

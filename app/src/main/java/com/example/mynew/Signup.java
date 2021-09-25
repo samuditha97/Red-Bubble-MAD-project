@@ -29,6 +29,8 @@ public class Signup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
@@ -40,7 +42,7 @@ public class Signup extends AppCompatActivity {
 
         //hooks for getting data
         pname = findViewById(R.id.name);
-        pusername = findViewById(R.id.login_username);
+        pusername = findViewById(R.id.username);
         pemail = findViewById(R.id.email);
         ppassword = findViewById(R.id.password);
         pphone = findViewById(R.id.phone);
@@ -49,95 +51,11 @@ public class Signup extends AppCompatActivity {
         //save data in firebase on button click
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
-
-
-            private Boolean validateName () {
-                String val = pname.getEditText().getText().toString();
-
-                if (val.isEmpty()) {
-                    pname.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    pname.setError(null);
-                    pname.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validateUsername () {
-                String val = pusername.getEditText().getText().toString();
-                String noWhiteSpace = "\\A\\w{4,20}\\z";
-
-                if (val.isEmpty()) {
-                    pusername.setError("Field cannot be empty");
-                    return false;
-                } else if (val.length() >= 15) {
-                    pusername.setError("Username is too long");
-                    return false;
-                } else if (!val.matches(noWhiteSpace)) {
-                    pusername.setError("White spaces are not allowed");
-                    return false;
-                } else {
-                    pusername.setError(null);
-                    pusername.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validateEmail () {
-                String val = pemail.getEditText().getText().toString();
-                String emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
-
-                if (val.isEmpty()) {
-                    pemail.setError("Field cannot be empty");
-                    return false;
-                } else if (!val.matches(emailPattern)) {
-                    pemail.setError("Invalid email address");
-                    return false;
-                } else {
-                    pemail.setError(null);
-                    pemail.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validatePhone () {
-                String val = pphone.getEditText().getText().toString();
-
-
-                if (val.isEmpty()) {
-                    pphone.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    pphone.setError(null);
-                    pphone.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validatePassword () {
-                String val = ppassword.getEditText().getText().toString();
-
-
-                if (val.isEmpty()) {
-                    ppassword.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    ppassword.setError(null);
-                    ppassword.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
             @Override
             public void onClick(View view) {
 
-                if(!validateName() | !validateUsername() | !validateEmail() | !validatePhone() | !validatePassword()){
-                    return;
-                }
-
-                FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
-                DatabaseReference reference = rootNode.getReference("Users");
+                 rootNode = FirebaseDatabase.getInstance();
+                 reference = rootNode.getReference("Users");
 
                 //get all the values
                 String name = pname.getEditText().getText().toString();
@@ -147,7 +65,7 @@ public class Signup extends AppCompatActivity {
                 String phone = pphone.getEditText().getText().toString();
 
 
-                SignupHelper helperClass = new SignupHelper(name, username, email, password, phone);
+                SignupHelper helperClass = new SignupHelper(name,username,email,phone,password);
 
                 reference.child(phone).setValue(helperClass);
             }
