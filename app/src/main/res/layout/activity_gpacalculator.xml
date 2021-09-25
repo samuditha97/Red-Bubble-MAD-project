@@ -9,7 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@color/background_color"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,7 +24,8 @@
                 android:text="GPA Calculator"
                 android:textColor="@color/white"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"/>
 
             <EditText
                 android:id="@+id/editText"
@@ -53,10 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/textedit"
+                android:background="@drawable/custom_btn_bg"
                 android:text="Add Course"
-                android:textColor="#616161"
-                app:iconTint="@color/teal_200" />
+                android:textColor="@color/white"
+                app:backgroundTint="@color/black" />
 
             <Button
                 android:id="@+id/buttonGpa_view"
@@ -67,6 +69,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:backgroundTint="@color/white"
+                android:background="@drawable/custom_btn_bg"
                 app:iconTint="@color/white" />
 
             <TextView
@@ -88,7 +91,8 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textStyle="bold"
-                app:iconTint="@color/white" />
+                app:backgroundTint="@color/black"
+                android:background="@drawable/custom_btn_bg"/>
 
         </LinearLayout>
     </ScrollView>

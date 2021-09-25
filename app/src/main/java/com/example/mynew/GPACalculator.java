@@ -43,7 +43,7 @@ public class GPACalculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 double result = counter/total_credit;
-                textView.setText("Your Gpa : "+result);
+                textView.setText("Your GPA : "+result);
 
             }
         });

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteAddActivity">
+    tools:context=".NoteAddActivity"
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/note_title"
@@ -17,7 +18,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:hint="Title"
-        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -32,7 +34,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:hint="Description"
-        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
@@ -40,16 +43,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="9dp"
         android:background="@drawable/custom_btn_bg"
         android:text="Add Note"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:backgroundTint="@color/background_color" />
 
 </RelativeLayout>
