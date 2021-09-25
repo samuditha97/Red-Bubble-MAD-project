@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            android:name=".NotepadActivity"
+            android:name=".NoteCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddNoteActivity"
             android:exported="true" />
         <activity
             android:name=".MainHome"
@@ -44,8 +47,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
