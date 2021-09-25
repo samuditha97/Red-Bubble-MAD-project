@@ -13,6 +13,18 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/timer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/themeColor"
+            android:orientation="vertical"
+            app:cardCornerRadius="7dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
@@ -28,7 +40,8 @@
             android:textColor="@color/white"
             android:textSize="30sp" />
     </RelativeLayout>
-
+        </androidx.cardview.widget.CardView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <EditText
             android:id="@+id/edit_text_input"

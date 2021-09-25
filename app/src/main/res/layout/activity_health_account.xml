@@ -12,6 +12,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/health_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/themeColor"
+            android:orientation="vertical"
+            app:cardCornerRadius="7dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
@@ -38,7 +50,8 @@
             android:textSize="30sp" />
 
     </RelativeLayout>
-
+        </androidx.cardview.widget.CardView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <LinearLayout
         android:layout_height="wrap_content"
