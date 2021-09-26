@@ -1,31 +1,35 @@
 package com.example.mynew;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Signup extends AppCompatActivity {
+import java.util.regex.Pattern;
 
-    ImageView backBtn;
-    Button signupBtn;
-    TextView titleText;
 
-    //get data variables
-    TextInputLayout pname, pusername, pemail, ppassword, pphone;
+public class Signup extends AppCompatActivity implements View.OnClickListener {
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
-    FirebaseAuth mFirebaseAuth;
+    private TextInputLayout pname,pusername,pemail,pphone,ppassword;
+    private TextView signup_title_txt;
+    private Button signup_enter_btn;
+    private ProgressBar progressBar;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,129 +37,114 @@ public class Signup extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
 
-        //Hooks
-        backBtn = findViewById(R.id.signup_back_btn);
-        signupBtn = findViewById(R.id.signup_enter_btn);
-        titleText = findViewById(R.id.signup_title_txt);
+        mAuth = FirebaseAuth.getInstance();
 
-        //hooks for getting data
-        pname = findViewById(R.id.name);
-        pusername = findViewById(R.id.login_username);
-        pemail = findViewById(R.id.email);
-        ppassword = findViewById(R.id.password);
-        pphone = findViewById(R.id.phone);
-        mFirebaseAuth = FirebaseAuth.getInstance();
+        signup_title_txt = (TextView) findViewById(R.id.signup_title_txt);
+        signup_title_txt.setOnClickListener(this);
 
-        //save data in firebase on button click
+        signup_enter_btn = (Button) findViewById(R.id.signup_enter_btn);
+        signup_enter_btn.setOnClickListener(this);
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
+        pname =(TextInputLayout) findViewById(R.id.name);
+        pusername =(TextInputLayout) findViewById(R.id.username);
+        pemail =(TextInputLayout) findViewById(R.id.email);
+        pphone =(TextInputLayout) findViewById(R.id.phone);
+        ppassword =(TextInputLayout) findViewById(R.id.password);
 
-
-            private Boolean validateName () {
-                String val = pname.getEditText().getText().toString();
-
-                if (val.isEmpty()) {
-                    pname.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    pname.setError(null);
-                    pname.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validateUsername () {
-                String val = pusername.getEditText().getText().toString();
-                String noWhiteSpace = "\\A\\w{4,20}\\z";
-
-                if (val.isEmpty()) {
-                    pusername.setError("Field cannot be empty");
-                    return false;
-                } else if (val.length() >= 15) {
-                    pusername.setError("Username is too long");
-                    return false;
-                } else if (!val.matches(noWhiteSpace)) {
-                    pusername.setError("White spaces are not allowed");
-                    return false;
-                } else {
-                    pusername.setError(null);
-                    pusername.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validateEmail () {
-                String val = pemail.getEditText().getText().toString();
-                String emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
-
-                if (val.isEmpty()) {
-                    pemail.setError("Field cannot be empty");
-                    return false;
-                } else if (!val.matches(emailPattern)) {
-                    pemail.setError("Invalid email address");
-                    return false;
-                } else {
-                    pemail.setError(null);
-                    pemail.setErrorEnabled(false);
-                    return true;
-                }
-            }
-
-            private Boolean validatePhone () {
-                String val = pphone.getEditText().getText().toString();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
-                if (val.isEmpty()) {
-                    pphone.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    pphone.setError(null);
-                    pphone.setErrorEnabled(false);
-                    return true;
-                }
-            }
+    }
 
-            private Boolean validatePassword () {
-                String val = ppassword.getEditText().getText().toString();
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.signup_title_txt:
+                startActivity(new Intent(this,Login.class));
+                break;
+            case  R.id.signup_enter_btn:
+                signup_enter_btn();
+                break;
 
+        }
 
-                if (val.isEmpty()) {
-                    ppassword.setError("Field cannot be empty");
-                    return false;
-                } else {
-                    ppassword.setError(null);
-                    ppassword.setErrorEnabled(false);
-                    return true;
-                }
-            }
+    }
 
-            @Override
-            public void onClick(View view) {
+    private void signup_enter_btn() {
+        String name = pname.getEditText().getText().toString().trim();
+        String username = pusername.getEditText().getText().toString().trim();
+        String email = pemail.getEditText().getText().toString().trim();
+        String phone = pphone.getEditText().getText().toString().trim();
+        String password = ppassword.getEditText().getText().toString().trim();
 
-                if(!validateName() | !validateUsername() | !validateEmail() | !validatePhone() | !validatePassword()){
-                    return;
-                }
+        if (name.isEmpty()){
+            pname.setError("Name is required");
+            pname.requestFocus();
+            return;
+        }
+        if (username.isEmpty()){
+            pusername.setError("username is required");
+            pusername.requestFocus();
+            return;
 
-                FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
-                DatabaseReference reference = rootNode.getReference("Users");
+        }
+        if (email.isEmpty()){
+            pemail.setError("username is required");
+            pemail.requestFocus();
+            return;
 
-                //get all the values
-                String name = pname.getEditText().getText().toString();
-                String username = pusername.getEditText().getText().toString();
-                String email = pemail.getEditText().getText().toString();
-                String password = ppassword.getEditText().getText().toString();
-                String phone = pphone.getEditText().getText().toString();
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            pemail.setError("please provide valid email");
+            pemail.requestFocus();
+            return;
+        }
+        if (phone.isEmpty()){
+            pphone.setError("phone number is required");
+            pphone.requestFocus();
+            return;
 
+        }
+        if (password.isEmpty()){
+            ppassword.setError("password is required");
+            ppassword.requestFocus();
+            return;
 
-                SignupHelper helperClass = new SignupHelper(name, username, email, password, phone);
+        }
 
-                reference.child(phone).setValue(helperClass);
-            }
-        });//register button method end
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
 
-    }//oncreate method end
+                        if (task.isSuccessful()) {
+                            User user = new User(name, username, email, password, phone);
 
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Signup.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
 
+                                        //redirect to login
+                                    } else {
+                                        Toast.makeText(Signup.this, "Failed to register try agin", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                        }else{
+                            Toast.makeText(Signup.this, "Failed to register try agin", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+    }
 }
 
 

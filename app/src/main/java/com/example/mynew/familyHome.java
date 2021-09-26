@@ -6,7 +6,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
@@ -16,6 +20,7 @@ public class familyHome extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    ImageView groceryBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,18 @@ public class familyHome extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
+        groceryBtn = findViewById(R.id.groceryBtn);
+
+        groceryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(familyHome.this,shoppingList.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
@@ -50,4 +67,5 @@ public class familyHome extends AppCompatActivity {
         }
 
     }
+
 }
