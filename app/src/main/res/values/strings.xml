@@ -13,14 +13,14 @@
     <string name="underweight">Underweight</string>
     <string name="normal">Normal</string>
     <string name="overweight">Overweight</string>
-    <string name="obese_class_i">Obese class i</string>
-    <string name="obese_class_ii">Obese class ii</string>
-    <string name="obese_class_iii">Obese class iii</string>
+    <string name="obese_class_i">Obesity class i</string>
+    <string name="obese_class_ii">Obesity class ii</string>
+    <string name="obese_class_iii">Obesity class iii</string>
     <string name="testId1">Emergency Places</string>
     <string name="calc">Calculate BMI</string>
     <string name="weightKg">Weight (kg)</string>
     <string name="Height">Height (cm)</string>
-    <string name="bmicalc">BMI CALCULATOR</string>
+    <string name="bmicalc">BMI Calculator</string>
 
     <string name="textView_gpaview">Here is your GPA</string>
     <string name="gpa">GPA Calculation</string>
@@ -64,6 +64,7 @@
     <string name="full_name">Enter Name</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
+
   
   
   
@@ -81,7 +82,12 @@
         <item>Health</item>
         <item>Personal</item>
         <item>Other</item>
+        <string name="save">save</string>
+        <string name="viewhealthprofiles">View Health Profiles</string>
+        <string name="search">Search</string>
+        <string name="entername">Enter Name</string>
     </string-array>
+
 
 
 </resources>
