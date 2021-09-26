@@ -13,16 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            android:name=".familyCalander"
-            android:exported="true" />
-        <activity
             android:name=".welcomeUI"
             android:exported="true" />
         <activity
             android:name=".BMICalculator"
-            android:exported="true" />
-        <activity
-            android:name=".BudgetHome"
             android:exported="true" />
         <activity
             android:name=".EmergencyPlacesActivity"
@@ -38,13 +32,13 @@
             android:name=".HealthProfile"
             android:exported="true" />
         <activity
+            android:name=".HealthAccount"
+            android:exported="true" />
+        <activity
             android:name=".login_signup"
             android:exported="true" />
         <activity
             android:name=".MainHome"
-            android:exported="true" />
-        <activity
-            android:name=".MyBudget"
             android:exported="true" />
         <activity
             android:name=".NotepadActivity"

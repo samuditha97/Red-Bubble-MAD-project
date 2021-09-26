@@ -1,79 +1,150 @@
 package com.example.mynew;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Signup extends AppCompatActivity {
+import java.util.regex.Pattern;
 
-    ImageView backBtn;
-    Button signupBtn;
-    TextView titleText;
 
-    //get data variables
-    TextInputLayout pname, pusername, pemail, ppassword, pphone;
+public class Signup extends AppCompatActivity implements View.OnClickListener {
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
-    FirebaseAuth mFirebaseAuth;
+    private TextInputLayout pname,pusername,pemail,pphone,ppassword;
+    private TextView signup_title_txt;
+    private Button signup_enter_btn;
+    private ProgressBar progressBar;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
 
-        //Hooks
-        backBtn = findViewById(R.id.signup_back_btn);
-        signupBtn = findViewById(R.id.signup_enter_btn);
-        titleText = findViewById(R.id.signup_title_txt);
+        mAuth = FirebaseAuth.getInstance();
 
-        //hooks for getting data
-        pname = findViewById(R.id.name);
-        pusername = findViewById(R.id.username);
-        pemail = findViewById(R.id.email);
-        ppassword = findViewById(R.id.password);
-        pphone = findViewById(R.id.phone);
-        mFirebaseAuth = FirebaseAuth.getInstance();
+        signup_title_txt = (TextView) findViewById(R.id.signup_title_txt);
+        signup_title_txt.setOnClickListener(this);
 
-        //save data in firebase on button click
+        signup_enter_btn = (Button) findViewById(R.id.signup_enter_btn);
+        signup_enter_btn.setOnClickListener(this);
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        pname =(TextInputLayout) findViewById(R.id.name);
+        pusername =(TextInputLayout) findViewById(R.id.username);
+        pemail =(TextInputLayout) findViewById(R.id.email);
+        pphone =(TextInputLayout) findViewById(R.id.phone);
+        ppassword =(TextInputLayout) findViewById(R.id.password);
 
-                 rootNode = FirebaseDatabase.getInstance();
-                 reference = rootNode.getReference("Users");
-
-                //get all the values
-                String name = pname.getEditText().getText().toString();
-                String username = pusername.getEditText().getText().toString();
-                String email = pemail.getEditText().getText().toString();
-                String password = ppassword.getEditText().getText().toString();
-                String phone = pphone.getEditText().getText().toString();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
-                SignupHelper helperClass = new SignupHelper(name,username,email,phone,password);
+    }
 
-                reference.child(phone).setValue(helperClass);
-            }
-        });//register button method end
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.signup_title_txt:
+                startActivity(new Intent(this,Login.class));
+                break;
+            case  R.id.signup_enter_btn:
+                signup_enter_btn();
+                break;
 
-    }//oncreate method end
+        }
 
+    }
 
+    private void signup_enter_btn() {
+        String name = pname.getEditText().getText().toString().trim();
+        String username = pusername.getEditText().getText().toString().trim();
+        String email = pemail.getEditText().getText().toString().trim();
+        String phone = pphone.getEditText().getText().toString().trim();
+        String password = ppassword.getEditText().getText().toString().trim();
+
+        if (name.isEmpty()){
+            pname.setError("Name is required");
+            pname.requestFocus();
+            return;
+        }
+        if (username.isEmpty()){
+            pusername.setError("username is required");
+            pusername.requestFocus();
+            return;
+
+        }
+        if (email.isEmpty()){
+            pemail.setError("username is required");
+            pemail.requestFocus();
+            return;
+
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            pemail.setError("please provide valid email");
+            pemail.requestFocus();
+            return;
+        }
+        if (phone.isEmpty()){
+            pphone.setError("phone number is required");
+            pphone.requestFocus();
+            return;
+
+        }
+        if (password.isEmpty()){
+            ppassword.setError("password is required");
+            ppassword.requestFocus();
+            return;
+
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+                            User user = new User(name, username, email, password, phone);
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Signup.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+
+                                        //redirect to login
+                                    } else {
+                                        Toast.makeText(Signup.this, "Failed to register try agin", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                        }else{
+                            Toast.makeText(Signup.this, "Failed to register try agin", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+    }
 }
 
 

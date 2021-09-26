@@ -19,7 +19,6 @@
             android:id="@+id/login_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="call_signup_login_Screen"
             android:padding="5dp"
             app:srcCompat="@drawable/back_btn"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -42,11 +41,11 @@
             android:layout_marginTop="80dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/username"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/enter_username"
+                android:hint="@string/email"
                 app:hintTextColor="@color/white"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/black"
@@ -62,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/ubuntu"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:textColor="@color/white" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -82,14 +81,13 @@
                 app:startIconDrawable="@drawable/password_icon"
                 app:startIconTint="@color/white"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/white">
+                app:endIconTint="@color/white"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/ubuntu"
-                    android:inputType="textPassword"
-                    android:textColor="@color/white" />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,16 +123,28 @@
                 android:id="@+id/login_enter_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="loggedin"
                 android:text="@string/login"
                 android:backgroundTint="@color/black"
                 android:textColor="@color/white"
                 android:fontFamily="@font/ubuntu"
                 android:layout_marginTop="20dp" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20sp"
+                android:layout_marginLeft="30dp"
+                android:visibility="gone"
+                />
+
 
         </LinearLayout>
 
+
+
     </LinearLayout>
+
 
 </ScrollView>

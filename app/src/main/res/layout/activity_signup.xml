@@ -172,6 +172,16 @@
             android:text="@string/sign_up"
             android:textColor="@color/white" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:layout_marginLeft="30dp"
+            android:visibility="gone"
+            />
+
     </LinearLayout>
 
 </ScrollView>
