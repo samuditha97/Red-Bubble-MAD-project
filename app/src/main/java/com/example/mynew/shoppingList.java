@@ -28,6 +28,7 @@ public class shoppingList extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     Toolbar toolbar;
 
     static ListView listView;

@@ -64,13 +64,12 @@
     <string name="full_name">Enter Name</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
+    <string name="save">Save</string>
+    <string name="viewhealthprofiles">View Health Profiles</string>
+    <string name="search">Search</string>
+    <string name="entername">Enter Name</string>
 
-  
-  
-  
-  
-  
-  <string-array name="items">
+    <string-array name="items">
         <item>Select item</item>
         <item>Transport</item>
         <item>Food</item>
@@ -82,10 +81,7 @@
         <item>Health</item>
         <item>Personal</item>
         <item>Other</item>
-        <string name="save">save</string>
-        <string name="viewhealthprofiles">View Health Profiles</string>
-        <string name="search">Search</string>
-        <string name="entername">Enter Name</string>
+
     </string-array>
 
 

@@ -14,17 +14,17 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.regex.Pattern;
 
 
 public class Signup extends AppCompatActivity implements View.OnClickListener {
 
-    private TextInputLayout pname,pusername,pemail,pphone,ppassword;
+    private TextInputEditText pname,pemail,pphone,ppassword;
     private TextView signup_title_txt;
     private Button signup_enter_btn;
     private ProgressBar progressBar;
@@ -45,11 +45,10 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         signup_enter_btn = (Button) findViewById(R.id.signup_enter_btn);
         signup_enter_btn.setOnClickListener(this);
 
-        pname =(TextInputLayout) findViewById(R.id.name);
-        pusername =(TextInputLayout) findViewById(R.id.username);
-        pemail =(TextInputLayout) findViewById(R.id.email);
-        pphone =(TextInputLayout) findViewById(R.id.phone);
-        ppassword =(TextInputLayout) findViewById(R.id.password);
+        pname =(TextInputEditText) findViewById(R.id.name);
+        pemail =(TextInputEditText) findViewById(R.id.email);
+        pphone =(TextInputEditText) findViewById(R.id.phone);
+        ppassword =(TextInputEditText) findViewById(R.id.password);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -71,25 +70,19 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void signup_enter_btn() {
-        String name = pname.getEditText().getText().toString().trim();
-        String username = pusername.getEditText().getText().toString().trim();
-        String email = pemail.getEditText().getText().toString().trim();
-        String phone = pphone.getEditText().getText().toString().trim();
-        String password = ppassword.getEditText().getText().toString().trim();
+        String email = pemail.getText().toString().trim();
+        String password = ppassword.getText().toString().trim();
+        String name = pname.getText().toString().trim();
+        String phone = pphone.getText().toString().trim();
+
 
         if (name.isEmpty()){
             pname.setError("Name is required");
             pname.requestFocus();
             return;
         }
-        if (username.isEmpty()){
-            pusername.setError("username is required");
-            pusername.requestFocus();
-            return;
-
-        }
         if (email.isEmpty()){
-            pemail.setError("username is required");
+            pemail.setError("email is required");
             pemail.requestFocus();
             return;
 
@@ -119,7 +112,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            User user = new User(name, username, email, password, phone);
+                            User user = new User(name, email, phone);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

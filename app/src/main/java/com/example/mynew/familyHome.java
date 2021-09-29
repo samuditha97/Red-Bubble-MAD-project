@@ -2,6 +2,7 @@ package com.example.mynew;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -20,7 +21,7 @@ public class familyHome extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    ImageView groceryBtn;
+    CardView grocery_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +44,9 @@ public class familyHome extends AppCompatActivity {
         toggle.syncState();
 
 
-        groceryBtn = findViewById(R.id.groceryBtn);
+        grocery_list = findViewById(R.id.grocery_list);
 
-        groceryBtn.setOnClickListener(new View.OnClickListener() {
+        grocery_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(familyHome.this,shoppingList.class);

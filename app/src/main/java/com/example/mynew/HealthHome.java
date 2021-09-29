@@ -1,11 +1,17 @@
 package com.example.mynew;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class HealthHome extends AppCompatActivity {
 
@@ -14,10 +20,14 @@ public class HealthHome extends AppCompatActivity {
     private CardView timer;
     private CardView profilesearcher;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_home);
+
+
 
         health_profile = findViewById(R.id.health_profile);
         bmi = findViewById(R.id.bmi);
@@ -57,4 +67,5 @@ public class HealthHome extends AppCompatActivity {
         });
 
     }
+
 }

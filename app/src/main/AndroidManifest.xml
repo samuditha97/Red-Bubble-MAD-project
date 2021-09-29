@@ -13,8 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".familyHome"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".welcomeUI"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".BMICalculator"
             android:exported="true" />
@@ -22,11 +32,10 @@
             android:name=".EmergencyPlacesActivity"
             android:exported="true" />
         <activity
-            android:name=".familyHome"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".GPACalculator"
+            android:exported="true" />
+        <activity
+            android:name=".NotepadActivity"
             android:exported="true" />
         <activity
             android:name=".HealthProfile"
@@ -39,9 +48,6 @@
             android:exported="true" />
         <activity
             android:name=".MainHome"
-            android:exported="true" />
-        <activity
-            android:name=".NotepadActivity"
             android:exported="true" />
         <activity
             android:name=".OnBoarding"
@@ -57,13 +63,23 @@
             android:exported="true" />
         <activity
             android:name=".UserProfile"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
+        <activity
+            android:name=".NoteCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddNoteActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".OfficialHome"
+            android:exported="true"/>
+        <activity
+            android:name=".HealthHome"
+            android:exported="true"/>
+        <activity
+            android:name=".HealthTimer"
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

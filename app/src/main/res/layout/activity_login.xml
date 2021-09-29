@@ -41,7 +41,6 @@
             android:layout_marginTop="80dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -51,13 +50,13 @@
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
                 app:boxStrokeWidth="2dp"
-                app:startIconDrawable="@drawable/username_icon"
+                app:startIconDrawable="@drawable/email_icon"
                 app:startIconTint="@color/white"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/ubuntu"
@@ -68,7 +67,6 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -85,6 +83,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword" />
