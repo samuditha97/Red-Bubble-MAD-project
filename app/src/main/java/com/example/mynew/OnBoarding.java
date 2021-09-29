@@ -97,6 +97,8 @@ public class OnBoarding extends AppCompatActivity {
                   animation = AnimationUtils.loadAnimation(OnBoarding.this,R.anim.side_animation);
                   letsGetStarted.setAnimation(animation);
                   letsGetStarted.setVisibility(View.VISIBLE);
+
+
               }
 
 

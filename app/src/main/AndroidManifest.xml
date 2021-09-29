@@ -13,12 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".Help"
+            android:exported="true" />
+        <activity
             android:name=".familyHome"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".welcomeUI"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,23 +66,22 @@
             android:exported="true" />
         <activity
             android:name=".UserProfile"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".NoteCategoryActivity"
             android:exported="true" />
         <activity
             android:name=".AddNoteActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".OfficialHome"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".HealthHome"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".HealthTimer"
-            android:exported="true"/>
-
+            android:exported="true" />
     </application>
 
 </manifest>

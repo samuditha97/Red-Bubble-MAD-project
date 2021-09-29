@@ -68,6 +68,7 @@
     <string name="viewhealthprofiles">View Health Profiles</string>
     <string name="search">Search</string>
     <string name="entername">Enter Name</string>
+    <string name="proname">Name</string>
 
     <string-array name="items">
         <item>Select item</item>
@@ -83,7 +84,6 @@
         <item>Other</item>
 
     </string-array>
-
 
 
 </resources>

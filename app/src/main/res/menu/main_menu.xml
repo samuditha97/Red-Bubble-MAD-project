@@ -9,22 +9,22 @@
             android:icon="@drawable/home"
             />
         <item
-            android:id="@+id/logout"
+            android:id="@+id/nav_logout"
             android:title="Logout"
             android:icon="@drawable/logout"
             />
         <item
-            android:id="@+id/account"
+            android:id="@+id/nav_account"
             android:title="Profile"
             android:icon="@drawable/account"
             />
         <item
-            android:id="@+id/notification"
+            android:id="@+id/nav_notification"
             android:title="notification"
             android:icon="@drawable/notification"
             />
         <item
-            android:id="@+id/help"
+            android:id="@+id/nav_help"
             android:title="Help"
             android:icon="@drawable/help"
             />
