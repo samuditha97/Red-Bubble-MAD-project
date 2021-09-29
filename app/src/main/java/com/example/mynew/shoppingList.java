@@ -16,12 +16,19 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class shoppingList extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     Toolbar toolbar;
 
     static ListView listView;
@@ -97,6 +104,44 @@ public class shoppingList extends AppCompatActivity {
                 }
             }
         });
+        loadContent();
+    }
+
+    //read the grocery list
+    public void loadContent(){
+        File path = getApplicationContext().getFilesDir();
+        File readFrom = new File(path,"list.txt");
+        byte[] content = new byte[(int) readFrom.length()];
+
+        FileInputStream stream = null;
+        try {
+            stream = new FileInputStream(readFrom);
+            stream.read(content);
+
+            String s =new String(content);
+            s = s.substring(1,s.length() - 1);
+            String split[] = s.split(", ");
+            items = new ArrayList<>(Arrays.asList(split));
+            adapter = new ListViewAdapter(this,items);
+            listView.setAdapter(adapter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //save the grocery list
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        try {
+            FileOutputStream writer = new FileOutputStream(new File(path,"list.txt"));
+            writer.write(items.toString().getBytes());
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
     }
 
     public static void removeItem(int remove){
