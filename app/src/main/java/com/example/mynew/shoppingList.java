@@ -1,12 +1,15 @@
 package com.example.mynew;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -16,12 +19,19 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class shoppingList extends AppCompatActivity {
+public class shoppingList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     Toolbar toolbar;
 
     static ListView listView;
@@ -47,10 +57,12 @@ public class shoppingList extends AppCompatActivity {
 
 
         /*---------------------Navigation DrawerMenu-------------*/
-
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         /*-----------------shopping list view------------*/
         listView = findViewById(R.id.listview);
@@ -97,6 +109,44 @@ public class shoppingList extends AppCompatActivity {
                 }
             }
         });
+        loadContent();
+    }
+
+    //read the grocery list
+    public void loadContent(){
+        File path = getApplicationContext().getFilesDir();
+        File readFrom = new File(path,"list.txt");
+        byte[] content = new byte[(int) readFrom.length()];
+
+        FileInputStream stream = null;
+        try {
+            stream = new FileInputStream(readFrom);
+            stream.read(content);
+
+            String s =new String(content);
+            s = s.substring(1,s.length() - 1);
+            String split[] = s.split(", ");
+            items = new ArrayList<>(Arrays.asList(split));
+            adapter = new ListViewAdapter(this,items);
+            listView.setAdapter(adapter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //save the grocery list
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        try {
+            FileOutputStream writer = new FileOutputStream(new File(path,"list.txt"));
+            writer.write(items.toString().getBytes());
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
     }
 
     public static void removeItem(int remove){
@@ -130,5 +180,25 @@ public class shoppingList extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                Intent intent = new Intent(shoppingList.this,MainHome.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_logout:
+                Intent intent3 = new Intent(shoppingList.this,Login.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_account:
+                Intent intent1 = new Intent(shoppingList.this,UserProfile.class);
+                startActivity(intent1);
+                break;
+        }
+
+        return false;
     }
 }

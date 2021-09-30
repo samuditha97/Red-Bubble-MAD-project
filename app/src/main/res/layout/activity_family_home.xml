@@ -5,10 +5,11 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/themeColor"
-    android:fitsSystemWindows="true"
+    android:background="@color/white"
     tools:context=".familyHome"
-    >
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true">
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -16,72 +17,153 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu"/>
 
-    <ScrollView
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/family_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="SpeakableTextPresentCheck">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/themeColor"
+            android:orientation="vertical"
+            app:cardCornerRadius="7dp">
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/themeColor">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:backgroundTint="@color/themeColor"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:navigationIcon="@drawable/menu" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:gravity="center"
+                    android:text="Family"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginBottom="50dp"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <GridLayout
+            android:id="@+id/gridlayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="55dp"
+            android:columnCount="2"
+            android:rowCount="2">
 
-            <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:backgroundTint="#05436b"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/menu" />
-
-            <ImageView
-                android:id="@+id/groceryBtn"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/grocery_list"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginTop="-30dp"
-                app:srcCompat="@drawable/grocery_list" />
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp">
 
-            <View
-                android:id="@+id/view15"
-                android:layout_width="300dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@color/color" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/calendarBtn"
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/grocerybtn" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:gravity="center_horizontal"
+                        android:text="Grocery List"
+                        android:textAlignment="center"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recipe_book"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/calendar"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp">
 
-                />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            <View
-                android:id="@+id/view18"
-                android:layout_width="300dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@color/color" />
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/recipebtn" />
 
-            <ImageView
-                android:id="@+id/bdayBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/bday" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="Recipe Book"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
 
-            <View
-                android:id="@+id/view19"
-                android:layout_width="300dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@color/color" />
+                </LinearLayout>
 
-        </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    </ScrollView>
+        </GridLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
