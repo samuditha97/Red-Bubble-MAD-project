@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            OfficialNote
             android:name=".UpdateNotesActivity"
             android:exported="true" />
         <activity
@@ -83,9 +82,6 @@
             android:exported="true" />
         <activity
             android:name=".AddNoteActivity"
-            android:exported="true" />
-        <activity
-            android:name=".OfficialHome"
             android:exported="true" />
          <activity
             android:name=".HealthHome"

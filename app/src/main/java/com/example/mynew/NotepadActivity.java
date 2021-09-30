@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +62,9 @@ public class NotepadActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new Adapter(this, NotepadActivity.this, notesList);
         recyclerView.setAdapter(adapter);
+
+        ItemTouchHelper helper =new ItemTouchHelper(callback);
+        helper.attachToRecyclerView(recyclerView);
 
 
     }
@@ -117,5 +124,45 @@ public class NotepadActivity extends AppCompatActivity {
         recreate();
     }
 
+    ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            int position = viewHolder.getAdapterPosition();
+            Model item = adapter.getList().get(position);
+
+            adapter.removeItem(viewHolder.getLayoutPosition());
+
+            Snackbar snackbar = Snackbar.make(coordinatorLayout, "Item Deleted", Snackbar.LENGTH_LONG)
+                    .setAction("UNDO", new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View view) {
+                            adapter.restoreItem(item,position);
+                            recyclerView.scrollToPosition(position);
+                        }
+                    }).addCallback(new BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                        @Override
+                        public void onDismissed(Snackbar transientBottomBar, int event) {
+                            super.onDismissed(transientBottomBar, event);
+
+                            if (!(event == DISMISS_EVENT_ACTION)) {
+                                DatabaseNoteClass db = new DatabaseNoteClass(NotepadActivity.this);
+                                db.deleteSingleItem(item.getId());
+                            }
+
+
+                        }
+                    });
+            snackbar.setActionTextColor(Color.YELLOW);
+            snackbar.show();
+        }
+    };
 }
 
