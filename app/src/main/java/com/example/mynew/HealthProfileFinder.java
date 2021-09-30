@@ -20,26 +20,26 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HealthProfileFinder extends AppCompatActivity {
 
-    TextInputLayout name;
-    Button search;
+    TextInputLayout Name;
+    Button searched;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_profile_finder);
 
-        search = findViewById(R.id.getprofile);
+        searched = findViewById(R.id.reg_btn);
     }
 
     private Boolean validatename() {
 
-        String val = name.getEditText().getText().toString();
+        String val = Name.getEditText().getText().toString();
         if (val.isEmpty()) {
-            name.setError("Field cannot be empty");
+            Name.setError("Field cannot be empty");
             return false;
         } else {
-            name.setError(null);
-            name.setErrorEnabled(false);
+            Name.setError(null);
+            Name.setErrorEnabled(false);
             return true;
         }
     }
@@ -54,15 +54,15 @@ public class HealthProfileFinder extends AppCompatActivity {
     }
 
     private void isUser() {
-        final String userEnteredName = name.getEditText().getText().toString().trim();
+        final String userEnteredName = Name.getEditText().getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("HealthProfile");
-        Query checkUser = reference.orderByChild("name").equalTo(userEnteredName);
+        Query checkUser = reference.orderByChild("Name").equalTo(userEnteredName);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    name.setError(null);
-                    name.setErrorEnabled(false);
+                    Name.setError(null);
+                    Name.setErrorEnabled(false);
                     String nameFromDB = dataSnapshot.child(userEnteredName).child("Name").getValue(String.class);
                     String ageFromDB = dataSnapshot.child(userEnteredName).child("Age").getValue(String.class);
                     String genderFromDB = dataSnapshot.child(userEnteredName).child("Gender").getValue(String.class);

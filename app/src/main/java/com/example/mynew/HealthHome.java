@@ -61,7 +61,7 @@ public class HealthHome extends AppCompatActivity {
         profilesearcher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HealthHome.this, HealthProfileFinder.class);
+                Intent intent = new Intent(HealthHome.this, HealthAccount.class);
                 startActivity(intent);
             }
         });
