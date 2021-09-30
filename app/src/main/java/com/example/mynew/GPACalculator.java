@@ -33,7 +33,8 @@ public class GPACalculator extends AppCompatActivity {
                 grade = Double.parseDouble(Grade.getText().toString());
                 counter += (grade*credit);
                 total_credit+=credit;
-                Toast.makeText(getApplicationContext(),"Credit : "+credit+"\ngrade : "+grade,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),
+                        "Credit : "+credit+"\ngrade : "+grade,Toast.LENGTH_LONG).show();
                 Credit.setText("");
                 Grade.setText("");
             }
