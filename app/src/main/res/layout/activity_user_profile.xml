@@ -25,7 +25,7 @@
                 app:srcCompat="@drawable/username_icon" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/name_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -46,67 +46,66 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/full_name">
+                android:textSize="20sp"
+                android:fontFamily="@font/ubuntu"
+                android:textColor="@color/black"
+                android:hint="@string/proname" />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/name_icon"
                     android:drawablePadding="10dp"
-                    android:text="kamala" />
+                    android:textSize="18sp"
+                    android:textColor="@color/themeColor"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                 <TextView
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="@string/email">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                     android:textSize="20sp"
+                     android:fontFamily="@font/ubuntu"
+                     android:textColor="@color/black"
+                    android:hint="@string/email"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/email_icon"
                     android:drawablePadding="10dp"
-                    android:text="kamala@gmail.com" />
+                    android:textSize="18sp"
+                    android:textColor="@color/themeColor"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="@string/phone">
+                <TextView
 
-                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ubuntu"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/phone"/>
+
+                <TextView
+                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/phone_icon"
                     android:drawablePadding="10dp"
-                    android:text="0772666445" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="@string/enter_password">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/password_icon"
-                    android:drawablePadding="10dp"
-                    android:text="kamal234" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:textSize="18sp"
+                    android:textColor="@color/themeColor"/>
 
             <Button
+                android:id="@+id/editbtn"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

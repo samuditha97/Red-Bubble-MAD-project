@@ -5,7 +5,6 @@ public class SignupHelper {
     String name,username,email,phone,password;
 
     public SignupHelper() {
-        this.name = name;
     }
 
     public SignupHelper(String name, String username, String email, String phone, String password) {
