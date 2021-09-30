@@ -1,16 +1,20 @@
 package com.example.mynew;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
@@ -18,10 +22,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     Context context;
     Activity activity;
     List<Model> notesList;
+    List<Model> newList;
 
-    public Adapter(NotepadActivity notepadActivity, NotepadActivity notepadActivity1, List<Model> notesList) {
+
+    public Adapter(Context context, Activity activity, List<Model> notesList) {
+        this.context = context;
+        this.activity = activity;
+        this.notesList = notesList;
+        newList = new ArrayList<>(notesList);
     }
-
 
     @NonNull
     @Override
@@ -36,17 +45,30 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         holder.title.setText(notesList.get(position).getTitle());
         holder.description.setText(notesList.get(position).getDescription());
 
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,UpdateNotesActivity.class);
+
+                intent.putExtra("title",notesList.get(holder.getAdapterPosition()).getTitle());
+                intent.putExtra("description",notesList.get(holder.getAdapterPosition()).getDescription());
+                intent.putExtra("id",notesList.get(holder.getAdapterPosition()).getId());
+
+                activity.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return notesList.size();
     }
 
     public class  MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView title,description;
-        RelativeLayout layout;
+        LinearLayout layout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -54,5 +76,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             description=itemView.findViewById(R.id.note_description);
             layout=itemView.findViewById(R.id.note_layout);
         }
+    }
+
+    public List<Model> getList() {
+        return notesList;
     }
 }

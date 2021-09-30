@@ -64,7 +64,6 @@ public class NotepadActivity extends AppCompatActivity {
 
     private void fetchAllNotesFromDatabase() {
         Cursor cursor = databaseNoteClass.readAllData();
-
         if (cursor.getCount() == 0) {
             Toast.makeText(this, "No Data to show", Toast.LENGTH_SHORT).show();
         } else {
