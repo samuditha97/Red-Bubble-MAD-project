@@ -52,7 +52,9 @@
                     android:backgroundTint="@color/themeColor"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
-                    app:navigationIcon="@drawable/menu" />
+                    app:navigationIcon="@drawable/menu"
+                    app:itemIconTint="@color/white"
+                    app:itemTextColor="@color/white"/>
 
 
                 <TextView

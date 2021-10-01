@@ -68,6 +68,7 @@ public class MainHome extends AppCompatActivity implements NavigationView.OnNavi
 
         /*----------------------ToolBar-------------------*/
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
 
         /*---------------------Navigation DrawerMenu-------------*/

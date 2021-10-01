@@ -37,6 +37,7 @@ public class familyHome extends AppCompatActivity implements NavigationView.OnNa
 
         /*----------------------ToolBar-------------------*/
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
 
         /*---------------------Navigation DrawerMenu-------------*/

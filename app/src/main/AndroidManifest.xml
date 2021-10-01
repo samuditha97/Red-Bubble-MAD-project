@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
-            OfficialNote
             android:name=".UpdateNotesActivity"
             android:exported="true" />
         <activity
@@ -84,15 +83,19 @@
         <activity
             android:name=".AddNoteActivity"
             android:exported="true" />
-        <activity
-            android:name=".OfficialHome"
-            android:exported="true" />
          <activity
             android:name=".HealthHome"
             android:exported="true" />
         <activity
             android:name=".HealthTimer"
             android:exported="true" />
+        <activity
+            android:name=".Recipe"
+            android:exported="true" />
+        <activity
+            android:name=".RecipeShow"
+            android:exported="true" />
+
     </application>
 
 </manifest>
