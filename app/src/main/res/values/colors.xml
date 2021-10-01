@@ -13,4 +13,7 @@
     <color name="textedit">#E6E1E1</color>
     <color name="cal1">#757679</color>
     <color name="cal2">#414141</color>
+    <color name="green">#11D99B</color>
+    <color name="red">#FF5151</color>
+    <color name="colorDivider">#ECECEC</color>
 </resources>
