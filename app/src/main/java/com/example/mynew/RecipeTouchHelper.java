@@ -1,8 +1,13 @@
 package com.example.mynew;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 public class RecipeTouchHelper extends ItemTouchHelper.SimpleCallback {
 
@@ -26,7 +31,23 @@ public class RecipeTouchHelper extends ItemTouchHelper.SimpleCallback {
             adapter.notifyDataSetChanged();
 
         }else {
+            adapter.deleteData(position);
 
         }
+    }
+
+    @Override
+    public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+        new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                .addSwipeRightBackgroundColor(Color.RED)
+                .addSwipeRightActionIcon(R.drawable.delete)
+                .addSwipeLeftBackgroundColor(Color.GREEN)
+                .addSwipeLeftActionIcon(R.drawable.edit)
+                .create()
+                .decorate();
+
+
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
     }
 }

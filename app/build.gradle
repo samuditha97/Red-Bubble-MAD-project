@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mynew"
-        minSdk 16
+        minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -54,7 +54,14 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+
+
+
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
     implementation "androidx.multidex:multidex:2.0.1"
+
 
 
 

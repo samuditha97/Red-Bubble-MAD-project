@@ -88,17 +88,20 @@
             android:exported="true" />
         <activity
             android:name=".AddNoteActivity"
-            android:exported="true" />
-        <activity
-            android:name=".OfficialHome"
-            android:exported="true"
-            tools:ignore="DuplicateActivity" />
+            android:exported="true" />     
         <activity
             android:name=".HealthHome"
             android:exported="true" />
         <activity
             android:name=".HealthTimer"
             android:exported="true" />
+        <activity
+            android:name=".Recipe"
+            android:exported="true" />
+        <activity
+            android:name=".RecipeShow"
+            android:exported="true" />
+
     </application>
 
 </manifest>
