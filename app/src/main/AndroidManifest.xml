@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mynew">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mynew">
         <activity
+            android:name=".AddTransactionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".BudgetDashboardActivity"
+            android:exported="true" />
+        <activity
             android:name=".UpdateNotesActivity"
             android:exported="true" />
         <activity
@@ -20,8 +27,7 @@
             android:exported="true" />
         <activity
             android:name=".OfficialHome"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".NoteAddActivity"
             android:exported="true" />
@@ -84,11 +90,20 @@
             android:name=".AddNoteActivity"
             android:exported="true" />
          <activity
+            android:exported="true" />     
+        <activity
             android:name=".HealthHome"
             android:exported="true" />
         <activity
             android:name=".HealthTimer"
             android:exported="true" />
+        <activity
+            android:name=".Recipe"
+            android:exported="true" />
+        <activity
+            android:name=".RecipeShow"
+            android:exported="true" />
+
     </application>
 
 </manifest>

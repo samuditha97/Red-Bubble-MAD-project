@@ -147,10 +147,11 @@
             android:backgroundTint="@color/themeColor"
             android:fontFamily="@font/ubuntu"
             android:layout_height="wrap_content"
+            android:id="@+id/btndelete"
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:textColor="@color/white"
-            android:text="UPDATE" />
+            android:text="DELETE" />
 
     </LinearLayout>
     </LinearLayout>

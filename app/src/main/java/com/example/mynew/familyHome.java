@@ -23,7 +23,7 @@ public class familyHome extends AppCompatActivity implements NavigationView.OnNa
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    CardView grocery_list;
+    CardView grocery_list,recipe_book;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class familyHome extends AppCompatActivity implements NavigationView.OnNa
 
         /*----------------------ToolBar-------------------*/
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
 
         /*---------------------Navigation DrawerMenu-------------*/
@@ -51,11 +52,20 @@ public class familyHome extends AppCompatActivity implements NavigationView.OnNa
 
         /*-----------------grocery list navigation---------------*/
         grocery_list = findViewById(R.id.grocery_list);
+        recipe_book = findViewById(R.id.recipe_book);
 
         grocery_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(familyHome.this,shoppingList.class);
+                startActivity(intent);
+            }
+        });
+
+        recipe_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(familyHome.this,Recipe.class);
                 startActivity(intent);
             }
         });

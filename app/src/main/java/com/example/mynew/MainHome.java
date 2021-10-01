@@ -34,6 +34,7 @@ public class MainHome extends AppCompatActivity implements NavigationView.OnNavi
         FamilyCardView = findViewById(R.id.FamilyCardView);
         HealthCardView = findViewById(R.id.HealthCardView);
         OfficialCardView = findViewById(R.id.OfficialCardView);
+        BudgetCardView = findViewById(R.id.BudgetCardView);
 
         FamilyCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +60,14 @@ public class MainHome extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
+        BudgetCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainHome.this, BudgetDashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         /*------------------------Hooks------------------*/
@@ -68,6 +77,7 @@ public class MainHome extends AppCompatActivity implements NavigationView.OnNavi
 
         /*----------------------ToolBar-------------------*/
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
 
         /*---------------------Navigation DrawerMenu-------------*/
