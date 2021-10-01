@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F8F8FF"
     android:padding="20dp"
-    tools:context=".HealthHome"
-  >
+    tools:context=".HealthHome">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -52,6 +51,8 @@
             android:layout_marginTop="150dp"
             android:layout_marginBottom="55dp"
             android:columnCount="2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:rowCount="2">
 
             <androidx.cardview.widget.CardView
