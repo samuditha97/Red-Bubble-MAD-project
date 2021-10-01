@@ -88,6 +88,8 @@
             android:exported="true" />
         <activity
             android:name=".AddNoteActivity"
+            android:exported="true" />
+         <activity
             android:exported="true" />     
         <activity
             android:name=".HealthHome"
